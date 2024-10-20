@@ -53,6 +53,7 @@ int main(){
                 }
             }
             week = (all_day+1) % 7 ;
+
             printf("\n%04d/01/01 is " , year );
             if( week == 0 ){
                 printf("Sunday.\n");
@@ -77,8 +78,6 @@ int main(){
             }
 
             // 因為沒學過array , 所以接下來比較麻煩
-            // 如果用array 可以直接 day[13] = {0,31,28,31,30,31,30,31,31,30,31,30,31};
-            // 然後用for迴圈去加到現在的前一個月總共有幾天
             if(month == 2 ){
                 all_day += 31 ;
             }
@@ -112,12 +111,24 @@ int main(){
             else if (month == 12 ) {
                 all_day += 31+28+31+30+31+30+31+31+30+31+30;
             }
+
+
+            // 如果用array 可以直接 day[13] = {0,31,28,31,30,31,30,31,31,30,31,30,31};
+            // 然後用for迴圈去加到現在的前一個月總共有幾天
+            // day[13] = {0,31,28,31,30,31,30,31,31,30,31,30,31};
+            // int i = 0 ;
+            // for(i = 2 ; i <= month ; i++ ){
+            //     all_day += day[i-1];
+            // }
+            // if month = 5 , all_day += day[1] + day[2] + day[3] + day[4];
+
             if((((year % 4 == 0 ) && (year % 100 != 0 )) || (year % 400 == 0) ) && month > 2 ){
                 all_day++;
             }
-
-            week = (all_day+1) % 7 ;
+            week = (all_day+1) % 7 ;          
             printf("%04d/%02d/01 is " , year , month);
+
+
             if( week == 0 ){
                 printf("Sunday.\n");
             }
@@ -139,8 +150,9 @@ int main(){
             else if (week == 6 ){
                 printf("Saturday.\n");
             }   
-            all_day += day-1;
 
+
+            all_day += day-1;
             week = (all_day+1) % 7 ;
             printf("%04d/%02d/%02d is " , year , month , day );
             if( week == 0 ){

@@ -19,10 +19,11 @@ int main(){
                 break;
             }
             default:{
+                int i ;
                 printf("Roman numeral: ");
 
+
                 int a = abcd / 1000;
-                int i ;
                 //是1000的多少倍數就print幾個M
                 for(int i = 0 ; i < a ; i++ ){ 
                     printf("M");
@@ -30,8 +31,7 @@ int main(){
                 
                 // abcd / 100 拿到 ab  , ab % 10 拿到 b
                 int b = (abcd/100) % 10 ;
-                switch (b)
-                {
+                switch (b){
                     case 9:{
                         printf("CM");
                         break;
@@ -60,8 +60,7 @@ int main(){
                 
                 // abcd/10 = abc , abc % 10 = c 
                 int c = (abcd/10) % 10 ;
-                switch (c)
-                {
+                switch (c){
                     case 9:{
                         printf("XC");
                         break;
@@ -90,8 +89,7 @@ int main(){
 
                 // abcd % 10 = d 
                 int d = abcd % 10 ;
-                switch (d)
-                {
+                switch (d){
                     case 9:{
                         printf("IX");
                         break;

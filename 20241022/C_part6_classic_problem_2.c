@@ -10,17 +10,10 @@ int main(){
             printf("Go to next question.\n\n");
             break;
         }
-        int now = 1 ;
-        printf("1\n");
+        
+        int now = 0 ;
         while(now <= row ){
             for(i = 0 ; i <= now ; i++){
-                if(i == 0 ){
-                    printf("1\t");
-                }
-                else if(i == now){
-                    printf("1\t");
-                }
-                else{
                     int n = 1 ; 
                     int k = 1 ;
                     int m = 1 ; // m = n-k;
@@ -34,7 +27,6 @@ int main(){
                         m *= j;
                     }
                     printf("%d\t",n/(k*m));
-                }
             }
             printf("\n");
             now++;
