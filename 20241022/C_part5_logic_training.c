@@ -86,63 +86,63 @@ int main(){
     // }
 
     // powerpoint p81 ~ p86 
-    // while(1){
-    //     printf("Please input a pair of string and integer: ");
-    //     char a , b , c , d;
-    //     int base ;
-    //     scanf(" (%c%c%c%c,%d)", &a, &b, &c, &d, &base);
-    //     if(a == b && b == c && c == d && a == base && a == 0  ){
-    //         printf("Go to next question\n\n");
-    //         break;
-    //     }
-    //     int ans = 0 ; 
-    //     int number ;
-    //     if( '0' <= a  && a <= '9'){
-    //         number = a-'0';
-    //     }
-    //     else{
-    //         number = a - 'A' + 10 ;
-    //     }
-    //     if(number >= base ){
-    //         printf("Wrong input, input again!\n\n");
-    //         continue;
-    //     }
-    //     ans += number*base*base*base;
-    //     if( '0' <=  b  && b <= '9'){
-    //         number = b-'0';
-    //     }
-    //     else{
-    //         number = b - 'A' + 10 ;
-    //     }
-    //     if(number >= base ){
-    //         printf("Wrong input, input again!\n\n");
-    //         continue;
-    //     }
-    //     ans += number*base*base;
-    //     if( '0' <= c && c <= '9'){
-    //         number = c - '0';
-    //     }
-    //     else{
-    //         number = c - 'A' + 10 ;
-    //     }
-    //     if(number >= base ){
-    //         printf("Wrong input, input again!\n\n");
-    //         continue;
-    //     }
-    //     ans += number*base;
-    //     if( '0' <= d  && d <= '9'){
-    //         number = d-'0';
-    //     }
-    //     else{
-    //         number = d - 'A' + 10 ;
-    //     }
-    //     if(number >= base ){
-    //         printf("Wrong input, input again!\n\n");
-    //         continue;
-    //     }
-    //     ans += number;
-    //     printf("%c%c%c%c in base %d is %d.\n\n",a,b,c,d,base,ans);
-    // }
+    while(1){
+        printf("Please input a pair of string and integer: ");
+        char a , b , c , d;
+        int base ;
+        scanf(" (%c%c%c%c,%d)", &a, &b, &c, &d, &base);
+        if(a == b && b == c && c == d && a == '0' && base == 0 ){
+            printf("Go to next question\n\n");
+            break;
+        }
+        int ans = 0 ; 
+        int number ;
+        if( '0' <= a  && a <= '9'){
+            number = a-'0';
+        }
+        else{
+            number = a - 'A' + 10 ;
+        }
+        if(number >= base ){
+            printf("Wrong input, input again!\n\n");
+            continue;
+        }
+        ans += number*base*base*base;
+        if( '0' <=  b  && b <= '9'){
+            number = b-'0';
+        }
+        else{
+            number = b - 'A' + 10 ;
+        }
+        if(number >= base ){
+            printf("Wrong input, input again!\n\n");
+            continue;
+        }
+        ans += number*base*base;
+        if( '0' <= c && c <= '9'){
+            number = c - '0';
+        }
+        else{
+            number = c - 'A' + 10 ;
+        }
+        if(number >= base ){
+            printf("Wrong input, input again!\n\n");
+            continue;
+        }
+        ans += number*base;
+        if( '0' <= d  && d <= '9'){
+            number = d-'0';
+        }
+        else{
+            number = d - 'A' + 10 ;
+        }
+        if(number >= base ){
+            printf("Wrong input, input again!\n\n");
+            continue;
+        }
+        ans += number;
+        printf("%c%c%c%c in base %d is %d.\n\n",a,b,c,d,base,ans);
+    }
 
     // powerpoint p87 ~ p90 
     // long long int number1 = 6 ;

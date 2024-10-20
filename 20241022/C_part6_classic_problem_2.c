@@ -10,7 +10,6 @@ int main(){
             printf("Go to next question.\n\n");
             break;
         }
-        
         int now = 0 ;
         while(now <= row ){
             for(i = 0 ; i <= now ; i++){
