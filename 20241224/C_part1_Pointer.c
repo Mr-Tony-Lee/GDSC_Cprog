@@ -1,10 +1,34 @@
 #include<stdio.h>
+#include<stdlib.h>
 
-void swap (int* a , int* b ){
+void swapI (int* a , int* b ){
     int temp = *a; 
     *a = *b ;
     *b = temp;
 }
+
+void swapF(float *a , float *b ){
+    float temp = *a; 
+    *a = *b ;
+    *b = temp;
+}
+
+void swapL (long *a , long *b ){
+    long temp = *a ;
+    *a = *b ;
+    *b = temp ;
+}
+
+void swap (void *a , void *b , size_t size ){
+    char *p = (char *) a , *q = (char*)b , temp ; 
+    while(size){
+        temp = *p ;
+        *p = *q ;
+        *q = temp ;
+        p++ ; q++ ; size--;
+    }
+}
+
 
 int main(){
 
@@ -53,5 +77,57 @@ int main(){
     // swap(&a , &b) ;
     // printf("a = %d , b = %d \n" , a, b );   
 
+    // int i ; 
+    // int a[10] = {1,2,3,4,5,6,7,8,9,10};
+    // printf("a[i]\t: ");
+    // for(i = 0 ; i < 10 ; i++ ){
+    //     printf("%d " , a[i]);
+    // }
+    // printf("\n");
     
+    // printf("*(a+i)\t: ");
+    // for(i = 0 ; i < 10 ; i++ ){
+    //     printf("%d " , *(a+i));
+    // }
+    // printf("\n");
+    
+    // printf("*(i+a)\t: ");
+    // for(i = 0 ; i < 10 ; i++ ){
+    //     printf("%d " , *(i+a));
+    // }
+    // printf("\n");
+    
+    // printf("i[a]\t: ");
+    // for(i = 0 ; i < 10 ; i++ ){
+    //     printf("%d " , i[a]);
+    // }
+    // printf("\n");
+    
+    // int a = 1 , b = 2 ;
+    // swap(&a , &b , sizeof(int));
+    // printf(" a = %d , b = %d\n" , a , b  );
+
+    // int n = 10000000 ; 
+    // int *a = malloc( n * sizeof(int) ); // 分配 n 個可以放int的空間給 a
+    // for(int i = 0 ; i < n ; i++ ){
+    //     a[i] = i;
+    // }
+    // printf("OK\n");
+    // free(a);    // 釋放記憶體空間，避免memory leak
+
+    // int count = 0 ;
+    // int row = 3 , column = 4 ;
+    // int ** twoD_array = (int**)malloc(row * sizeof(int*));
+    // for(int i = 0 ; i < row ; i++ ){
+    //     twoD_array[i] = (int*)malloc(column * sizeof(int));
+    //     for(int j = 0 ; j < column ; j++ ){
+    //         twoD_array[i][j] = count++;
+    //         printf("%2d " , twoD_array[i][j]);
+    //     }
+    //     printf("\n");
+    // }
+    // for(int i = 0 ; i < row ; i++ ){
+    //     free(twoD_array[i]);
+    // }
+    // free(twoD_array);
 }
